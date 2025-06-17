@@ -175,4 +175,15 @@ document.addEventListener('DOMContentLoaded', () => {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
   });
+
+  document.addEventListener('keydown', (e) => {
+  if (e.code === 'Space') {
+    e.preventDefault();
+    startStopwatch();
+  } else if (e.code === 'Enter') {
+    e.preventDefault();
+    recordLap();
+  }
+});
+
 });
