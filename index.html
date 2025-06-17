@@ -24,23 +24,53 @@
     #stopwatch {
       z-index: 10;
     }
+    #laps {
+  max-height: 160px;
+  overflow-y: auto;
+  width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: #4b5563 transparent;
+  margin-top: 1.5rem;
+}
+
+#laps::-webkit-scrollbar {
+  width: 8px;
+}
+
+#laps::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+  border-radius: 9999px;
+}
+
+#laps li {
+  background-color: #2d2d2d;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
   </style>
 </head>
 <body>
 
+
   <canvas id="bgCanvas"></canvas>
 
-  <div id="stopwatch" class="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
-    <div id="display" class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-widest mb-2 text-center">00:00:00</div>
-    <div id="milliseconds" class="text-3xl sm:text-4xl text-gray-400 mb-6 text-center">.000</div>
+  <div id="stopwatch" class="absolute inset-0 flex flex-col items-center justify-center text-white px-4 fixed">
+    <div id="display" class="text-9xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-widest mb-2 text-center">00:00:00</div>
+    <div id="milliseconds" class="text-5xl sm:text-4xl text-gray-400 mb-6 text-center">.000</div>
 
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-xs sm:max-w-md">
       <button id="startBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">▶ Start</button>
       <button id="pauseBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">⏸ Pause</button>
       <button id="resetBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">🔄 Reset</button>
     </div>
-  </div>
 
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-xs sm:max-w-md mt-4">
+      <button id="lapBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">🏁 Lap</button>
+      <button id="exportBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">⬇ Export</button>
+    </div>
+    <ul id="laps" class="mt-6 text-sm sm:text-base w-full max-w-md space-y-1 text-gray-300 px-2"></ul>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
