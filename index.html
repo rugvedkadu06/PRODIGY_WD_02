@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Stopwatch - WD_02</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="script.js"></script>
   <style>
     html, body {
       margin: 0;
@@ -36,12 +35,12 @@
     <div id="milliseconds" class="text-3xl sm:text-4xl text-gray-400 mb-6 text-center">.000</div>
 
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-xs sm:max-w-md">
-      <button id="startBtn" onclick="startStopwatch()" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">▶ Start</button>
-      <button onclick="pauseStopwatch()" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">⏸ Pause</button>
-      <button onclick="resetStopwatch()" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">🔄 Reset</button>
+      <button id="startBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">▶ Start</button>
+      <button id="pauseBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">⏸ Pause</button>
+      <button id="resetBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">🔄 Reset</button>
     </div>
   </div>
 
-
+  <script src="script.js"></script>
 </body>
 </html>
