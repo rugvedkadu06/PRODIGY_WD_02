@@ -54,23 +54,37 @@
 
 
   <canvas id="bgCanvas"></canvas>
-
-  <div id="stopwatch" class="absolute inset-0 flex flex-col items-center justify-center text-white px-4 fixed">
-    <div id="display" class="text-9xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-widest mb-2 text-center">00:00:00</div>
-    <div id="milliseconds" class="text-5xl sm:text-4xl text-gray-400 mb-6 text-center">.000</div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-xs sm:max-w-md">
-      <button id="startBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">▶ Start</button>
-      <button id="pauseBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">⏸ Pause</button>
-      <button id="resetBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">🔄 Reset</button>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-xs sm:max-w-md mt-4">
-      <button id="lapBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">🏁 Lap</button>
-      <button id="exportBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">⬇ Export</button>
-    </div>
-    <ul id="laps" class="mt-6 text-sm sm:text-base w-full max-w-md space-y-1 text-gray-300 px-2"></ul>
+<div id="stopwatch" class="absolute inset-0 flex flex-col items-center justify-center text-white px-6 fixed size-full">
+  <div id="display" class="text-[8rem] sm:text-[9rem] md:text-[10rem] lg:text-[11rem] font-bold tracking-widest mb-4 text-center">
+    00:00:00
   </div>
+
+  <div id="milliseconds" class="text-[3rem] sm:text-[3.5rem] text-gray-400 mb-10 text-center">
+    .000
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full max-w-md scale-[1.5] text-center">
+    <button id="startBtn" title="Keyboard Shortcut: Space" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">
+      ▶ Start
+    </button>
+    <button id="pauseBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">
+      ⏸ Pause
+    </button>
+    <button id="resetBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">
+      🔄 Reset
+    </button>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-md mt-10 scale-[1.5]">
+    <button id="lapBtn" title="Keyboard Shortcut: Enter" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">
+      🏁 Lap
+    </button>
+    <button id="exportBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">
+      ⬇ Export
+    </button>
+  </div>
+
+  <ul id="laps" class="mt-10 text-lg sm:text-xl w-full max-w-xl space-y-2 text-gray-300 px-4"></ul>
+</div>
   <script src="script.js"></script>
 </body>
 </html>
