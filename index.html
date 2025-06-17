@@ -24,67 +24,70 @@
     #stopwatch {
       z-index: 10;
     }
+
     #laps {
-  max-height: 160px;
-  overflow-y: auto;
-  width: 100%;
-  scrollbar-width: thin;
-  scrollbar-color: #4b5563 transparent;
-  margin-top: 1.5rem;
-}
+      max-height: 160px;
+      overflow-y: auto;
+      width: 100%;
+      scrollbar-width: thin;
+      scrollbar-color: #4b5563 transparent;
+      margin-top: 1.5rem;
+    }
 
-#laps::-webkit-scrollbar {
-  width: 8px;
-}
+    #laps::-webkit-scrollbar {
+      width: 8px;
+    }
 
-#laps::-webkit-scrollbar-thumb {
-  background-color: #4b5563;
-  border-radius: 9999px;
-}
+    #laps::-webkit-scrollbar-thumb {
+      background-color: #4b5563;
+      border-radius: 9999px;
+    }
 
-#laps li {
-  background-color: #2d2d2d;
-  padding: 0.25rem 0.75rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
-}
+    #laps li {
+      background-color: #2d2d2d;
+      padding: 0.25rem 0.75rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+    }
   </style>
 </head>
 <body>
 
-
   <canvas id="bgCanvas"></canvas>
-<div id="stopwatch" class="absolute inset-0 flex flex-col items-center justify-center text-white px-6 fixed size-full">
-  <div id="display" class="text-[8rem] sm:text-[9rem] md:text-[10rem] lg:text-[11rem] font-bold tracking-widest mb-4 text-center">
-    00:00:00
+
+  <div id="stopwatch" class="absolute inset-0 flex flex-col items-center justify-center text-white px-4 sm:px-6 py-4">
+    <div id="display" class="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold tracking-widest mb-2 sm:mb-4 text-center">
+      00:00:00
+    </div>
+
+    <div id="milliseconds" class="text-[1.5rem] sm:text-[2.5rem] text-gray-400 mb-6 sm:mb-10 text-center">
+      .000
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 w-full max-w-md text-center">
+      <button id="startBtn" title="Keyboard Shortcut: Space" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl text-base sm:text-lg">
+        ▶ Start
+      </button>
+      <button id="pauseBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl text-base sm:text-lg">
+        ⏸ Pause
+      </button>
+      <button id="resetBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl text-base sm:text-lg">
+        🔄 Reset
+      </button>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full max-w-md mt-6">
+      <button id="lapBtn" title="Keyboard Shortcut: Enter" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl text-base sm:text-lg">
+        🏁 Lap
+      </button>
+      <button id="exportBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl text-base sm:text-lg">
+        ⬇ Export
+      </button>
+    </div>
+
+    <ul id="laps" class="mt-8 text-base sm:text-lg w-full max-w-xl space-y-2 text-gray-300 px-2 sm:px-4"></ul>
   </div>
 
-  <div id="milliseconds" class="text-[3rem] sm:text-[3.5rem] text-gray-400 mb-10 text-center">
-    .000
-  </div>
-  <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full max-w-md scale-[1.5] text-center">
-    <button id="startBtn" title="Keyboard Shortcut: Space" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">
-      ▶ Start
-    </button>
-    <button id="pauseBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">
-      ⏸ Pause
-    </button>
-    <button id="resetBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">
-      🔄 Reset
-    </button>
-  </div>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-md mt-10 scale-[1.5]">
-    <button id="lapBtn" title="Keyboard Shortcut: Enter" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">
-      🏁 Lap
-    </button>
-    <button id="exportBtn" class="bg-neutral-700 hover:bg-neutral-600 py-2 px-4 rounded-xl">
-      ⬇ Export
-    </button>
-  </div>
-
-  <ul id="laps" class="mt-10 text-lg sm:text-xl w-full max-w-xl space-y-2 text-gray-300 px-4"></ul>
-</div>
   <script src="script.js"></script>
 </body>
 </html>
